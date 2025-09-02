@@ -1,0 +1,30 @@
+<nav class="navbar" aria-label="Main navigation">
+    <a class="navbar__logo" [routerLink]="['/']">
+        <img
+            ngSrc="assets/logo.svg"
+            width="32"
+            height="32"
+            alt="Marketplace Logo"
+            priority
+            class="navbar__logo-img"
+        />
+        Marketplace
+    </a>
+    <ul class="navbar__links">
+        <li>
+            <a [routerLink]="['/']" class="navbar__link" routerLinkActive="navbar__link--active">Home</a>
+        </li>
+        <li>
+            <a [routerLink]="['/products']" class="navbar__link" routerLinkActive="navbar__link--active">Products</a>
+        </li>
+        <li>
+            <a [routerLink]="['/dashboard']" class="navbar__link" routerLinkActive="navbar__link--active">Dashboard</a>
+        </li>
+        <!-- Add more links as needed -->
+    </ul>
+    <div class="navbar__actions">
+        <!-- Example: Add login/logout buttons or cart icon here -->
+        <button class="navbar__button">Login</button>
+        <button class="navbar__button">Cart</button>
+    </div>
+</nav>

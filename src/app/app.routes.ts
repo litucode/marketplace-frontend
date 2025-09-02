@@ -7,23 +7,26 @@ export const routes: Routes = [
     // { path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '', component: Welcome },
     { path: 'welcome', component: Welcome },
-    { path: 'products', component: ProductList,
+    {
+        path: 'products', component: ProductList,
         children: [
-            { 
+            {
                 path: 'list',
-                loadComponent: () => import('./pages/dynamics/products/product-list/product-list').then(m => m.ProductList) },
+                loadComponent: () => import('./pages/dynamics/products/product-list/product-list').then(m => m.ProductList)
+            },
             { path: 'details', component: ProductDetails }
         ]
-     },
+    },
     {
         path: 'dashboard',
         loadComponent: () =>
-        import('./pages/dashboard/dashboard-overview/dashboard-overview').then(m => m.DashboardOverview),
+            import('./pages/dashboard/dashboard-overview/dashboard-overview').then(m => m.DashboardOverview),
         children: [
-        // Add more dashboard feature routes here
+            // Add more dashboard feature routes here
         ],
     },
-    { path: '**',
+    {
+        path: '**',
         loadComponent: () => import('./pages/dynamics/not-found/not-found').then(m => m.NotFound)
     }
 ];
