@@ -1,1 +1,82 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: 100%;
+}
+
+.grid-item {
+    margin-left: 15px;
+    margin-right: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+@function grid-width($columns) {
+    @return calc(100% / $columns - 30px);
+}
+
+// Generate grid classes for 1 to 12 columns
+@for $i from 1 through 12 {
+    .grid-#{$i} {
+        flex: 0 0 grid-width($i);
+        max-width: grid-width($i);
+    }
+}
+
+@for $i from 1 through 12 {
+    .grid-sm-#{$i} {
+        @media (min-width: 576px) {
+            flex: 0 0 grid-width($i);
+            max-width: grid-width($i);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    .grid-md-#{$i} {
+        @media (min-width: 768px) {
+            flex: 0 0 grid-width($i);
+            max-width: grid-width($i);
+        }
+    }
+}
+
+@for $i from 1 through 12 {
+    .grid-lg-#{$i} {
+        @media (min-width: 992px) {
+            flex: 0 0 grid-width($i);
+            max-width: grid-width($i);
+        }
+    }
+}
+
+// Paddings
+@for $i from 0 through 5 {
+    .padding-#{$i} {
+        padding: $i * 5px;
+    }
+    .padding-top-#{$i} {
+        padding-top: $i * 5px;
+    }
+    .padding-bottom-#{$i} {
+        padding-bottom: $i * 5px;
+    }
+    .padding-left-#{$i} {
+        padding-left: $i * 5px;
+    }
+    .padding-right-#{$i} {
+        padding-right: $i * 5px;
+    }
+}

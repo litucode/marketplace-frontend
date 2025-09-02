@@ -1,0 +1,22 @@
+<div class="content">
+    <p class="friendly-text">Opps!</p>
+    <img src="assets/images/404.png" alt="404 Not Found" />
+    <p class="explained-text">Sorry but the content is not available.</p>
+
+    <ul class="suggestion-text">
+        <li>Check the URL for errors</li>
+        <li>Return to the homepage</li>
+        <li>Contact support if the issue persists</li>
+    </ul>
+</div>
+<div class="content">
+    <p class="recomendation-title">We recommend you try the following:</p>
+    <div class="grid">
+        @for (item of items(); track item.id) {
+            <div class="card grid-item grid-3">
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
+            </div>
+        }
+    </div>
+</div>
